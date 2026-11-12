@@ -1,21 +1,40 @@
+
 # Gerpt
 
-**TODO: Add description**
+🛒 *Grocery ERP Tools*
 
-## Installation
+CLI tools to take my personal Grocy workflow and make things easier/faster.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `gerpt` to your list of dependencies in `mix.exs`:
+## Usage
 
-```elixir
-def deps do
-  [
-    {:gerpt, "~> 0.1.0"}
-  ]
-end
+For help:
+
+```bash
+gerpt
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/gerpt>.
+----
 
+```bash
+gerpt deduplicate <input>
+```
+
+Deduplicate stdin list of barcodes, separated by newlines, and counts each duplicate.
+For example, a file full of:
+
+```text
+hello
+hello
+hello
+bye
+bye
+au voir
+```
+
+will be output as:
+
+```text
+au voir   1
+bye       2
+hello     3
+```
